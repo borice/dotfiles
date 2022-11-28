@@ -22,6 +22,14 @@ alias ...='cd ../..'
 alias beep='echo -en "\007"'
 alias cd..='cd ..'
 
+if type -P batcat >/dev/null; then
+  alias bat=batcat
+fi
+
+if type -P fdfind >/dev/null; then
+  alias fd=fdfind
+fi
+
 alias sbtinit='mkdir -p src/{main,test}/{java,resources,scala}'
 alias sbtclean='rm -rf project/project/ project/target/ target/'
 
