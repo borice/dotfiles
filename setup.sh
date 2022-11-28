@@ -1,3 +1,6 @@
+# install with:
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/borice/dotfiles/main/setup.sh)"
+
 # install powerline font for vim
 mkdir -p ~/.local/share/fonts/NerdFonts && curl -fLo "$HOME/.local/share/fonts/NerdFonts/JetBrains Mono Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf
 
