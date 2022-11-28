@@ -13,6 +13,8 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 		# install required packages
 		sudo apt -y install git fzf bat exa fd-find tree vim curl fontconfig
 
+		git clone https://github.com/borice/dotfiles.git ~/.dotfiles --depth=1
+
 		if type -P fzf >/dev/null; then
 			ln -s $HOME/.dotfiles/.fzf.bash $HOME
 		fi
