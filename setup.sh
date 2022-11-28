@@ -16,22 +16,36 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 		git clone https://github.com/borice/dotfiles.git ~/.dotfiles --depth=1
 
 		if type -P fzf >/dev/null; then
-			ln -s $HOME/.dotfiles/.fzf.bash $HOME
+			ln -s $HOME/.dotfiles/fzf.bash $HOME/.fzf.bash
 		fi
 
 		if type -P fc-cache >/dev/null; then
 			fc-cache -vf $HOME/.local/share/fonts/NerdFonts
 		fi
+
+		cat <<EOF >>$HOME/.bashrc
+
+if [ -f \$HOME/.dotfiles/common_bashrc ]; then
+	source \$HOME/.dotfiles/common_bashrc
+fi
+EOF
+
+		cat <<EOF >>$HOME/.bash_aliases
+
+if [ -f \$HOME/.dotfiles/common_aliases ]; then
+	source \$HOME/.dotfiles/common_aliases
+fi
+EOF
+
 	fi
 fi
 
-if [[ "${SHELL##*/}" == "bash" ]]; then
+if [ -n "$BASH_VERSION" ]; then
 	# download bash-git-prompt
 	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.repos/bash-git-prompt --depth=1
 
 	# download z.sh
 	git clone https://github.com/rupa/z.git ~/.repos/z --depth=1
-
 fi
 
 echo "All done"
