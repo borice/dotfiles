@@ -41,7 +41,7 @@ alias kns=kubens
 
 alias scala213='cs launch ammonite --scala 2.13'
 alias scala212='cs launch ammonite --scala 2.12'
-alias scala3='cs launch ammonite --scala 3.1.3'
+alias scala3='cs launch ammonite --scala 3.2.1'
 
 function kubeconfmerge() {
   if [ $# -eq 0 ]
